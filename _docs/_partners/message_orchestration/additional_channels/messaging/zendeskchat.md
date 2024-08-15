@@ -39,7 +39,7 @@ Before you start, you'll need the following:
 3. In the **Endpoint URL** textbox, add the **campaign/trigger/send** endpoint.
 4. Under **Authentication**, select **Bearer token** and add the Braze REST API key with permission to campaigns.trigger.send.
 
-![An example Zendesk webhook.]({% image_buster /assets/img/front/data_transformation.png %})
+![An example Zendesk webhook.]({% image_buster assets/img/zendesk_images/chat1.png %})
 
 
 ### Step 2: Create an outbound SMS campaign
@@ -56,7 +56,7 @@ When Zendesk sends the content of a message via API, it comes in the following f
 
 Therefore we need to extract the detail we want from this string to display in the message, else a user will see this:
 
-![An example SMS without formatting.]({% image_buster /assets/img/front/sms_to_braze.png %}){: style="max-width:80%;"}
+![An example SMS without formatting.]({% image_buster assets/img/zendesk_images/chat2.png %}){: style="max-width:80%;"}
 
 In the Message textbox, add the following Liquid code along with any opt-out language or other static content:
 
@@ -75,19 +75,19 @@ Feel free to respond directly to this number!
 {% endraw %}
 
 
-![An example SMS with formatting.]({% image_buster /assets/img/front/sms_to_braze.png %}){: style="max-width:80%;"}
+![An example SMS with formatting.]({% image_buster assets/img/zendesk_images/chat3.png %}){: style="max-width:80%;"}
 
 #### 2.2 Schedule the delivery
 
 For the delivery type, select **API-Triggered delivery**; then copy the Campaign ID which will be used in the next steps.
 
 
-![API Triggered delivery]({% image_buster /assets/img/front/custom_event_trigger.png %})
+![API Triggered delivery]({% image_buster assets/img/zendesk_images/chat4.png %})
 
 
 Finally, under **Delivery Controls**, enable re-eligibility.
 
-![Re-eligibility enabled under "Delivery Controls."]({% image_buster /assets/img/front/braze_reeligibility.png %})
+![Re-eligibility enabled under "Delivery Controls."]({% image_buster assets/img/zendesk_images/chat5.png %})
 
 ### Step 3: Create a Trigger in Zendesk to forward agent replies to Braze
 
@@ -99,11 +99,11 @@ Next, navigate to **Objects and rules** > **Business rules** > **Triggers**
 - **Ticket>Comment** is **Present and requester can see comment** so that the message is triggered whenever a new public comment is included in a ticket update
 - **Ticket>Update** via is not **Web service (API)** so that when a user sends a message from Braze, it is not forwarded back to their cell phone. Only messages coming from Zendesk will be forwarded.
 
-![Respond via SMS Braze.]({% image_buster /assets/img/front/front_custom_channel.png %})
+![Respond via SMS Braze.]({% image_buster assets/img/zendesk_images/chat6.png %})
 
 Under **Actions**, select **Notify by Webhook** and choose the endpoint you created in step 1. Next, specify the body of the API call. Input the campaign_id from step 2 into the request body.
 
-![Actions .]({% image_buster /assets/img/front/front_custom_channel.png %})
+![Actions .]({% image_buster assets/img/zendesk_images/chat7.png %})
 
 {% raw %}
 ```liquid
@@ -133,7 +133,7 @@ Under **Actions**, select **Notify by Webhook** and choose the endpoint you crea
 
 If you’d like to notify the user that the ticket has been closed, create a new campaign in Braze with the templated response body 
 
-![ticket closed.]({% image_buster /assets/img/front/front_custom_channel2.png %}){: style="max-width:65%;"}
+![ticket closed.]({% image_buster assets/img/zendesk_images/chat8.png %}){: style="max-width:65%;"}
 
 Select **API Triggered delivery**, copy campaign ID 
 
@@ -141,11 +141,11 @@ Next, set up a trigger to notify Braze when the ticket is closed:
 - Category: **Trigger a message**
 - Under Conditions, select **Ticket>Ticket Status** is changed to **Solved**
 
-![Solved ticket.]({% image_buster /assets/img/front/front_custom_channel2.png %}){: style="max-width:65%;"}
+![Solved ticket.]({% image_buster assets/img/zendesk_images/chat9.png %}){: style="max-width:65%;"}
 
 Under **Actions**, select **Notify by Webhook** and choose the second endpoint you just created. From there, we need to specify the body of the API call:
 
-![Solved ticket2.]({% image_buster /assets/img/front/front_custom_channel2.png %}){: style="max-width:65%;"}
+![Solved ticket2.]({% image_buster assets/img/zendesk_images/chat10.png %}){: style="max-width:65%;"}
 
 {% raw %}
 ```liquid
@@ -193,7 +193,7 @@ In the Braze dashboard, go to **Audience**, choose your **SMS subscription group
 |Reply Message|The message that will be sent when a keyword is detected, such as "A customer service rep will reach out to you shortly."|
 
 
-![An example SMS keyword category in Braze.]({% image_buster /assets/img/front/front_keyword.png %}){: style="max-width:65%;"}
+![An example SMS keyword category in Braze.]({% image_buster assets/img/zendesk_images/chat11.png %}){: style="max-width:65%;"}
 
 #### Step 6.2: Create your first webhook campaign
 
@@ -232,18 +232,18 @@ In the webhook composer:
 ```
 {% endraw %}
 
-![An example request with the two required headers.]({% image_buster /assets/img/front/webhook_settings.png %}){: style="max-width:65%;"}
+![An example request with the two required headers.]({% image_buster assets/img/zendesk_images/chat12.png %}){: style="max-width:65%;"}
 
 
 #### Step 6.3: Schedule the first delivery
 
 For **Schedule Delivery**, select **Action-Based Delivery**, then choose **Send an SMS Inbound Message** for your trigger type. Also add the SMS subscription group and keyword category you set up previously.
 
-![The "Schedule Delivery" page for the first webhook campaign.]({% image_buster /assets/img/front/front_actionbased_keyword.png %})
+![The "Schedule Delivery" page for the first webhook campaign.]({% image_buster assets/img/zendesk_images/chat13.png %})
 
 Under **Delivery Controls**, enable re-eligibility.
 
-![Re-eligibility selected under "Delivery Controls" for the first webhook campaign.]({% image_buster /assets/img/front/braze_reeligibility.png %})
+![Re-eligibility selected under "Delivery Controls" for the first webhook campaign.]({% image_buster assets/img/zendesk_images/chat14.png %})
 
 #### Step 6.4: Create your second webhook campaign
 
