@@ -23,9 +23,7 @@ Before you start, you'll need the following:
 |---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | A Zendesk account            | A Zendesk account is required to take advantage of this partnership.|
 | A Zendesk Basic Authorization Token | A Zendesk Basic Authorization Token will be used to make an outbound webhook request from Braze to Zendesk.|
-| A Braze REST API Key         | A Braze REST API key with campaigns.trigger.send permissions.
-
-This can be created in the Braze dashboard from Settings > API Keys.|
+| A Braze REST API Key         | A Braze REST API key with campaigns.trigger.send permissions. This can be created in the Braze dashboard from Settings > API Keys.|
 
 ## Use cases
 
@@ -53,14 +51,14 @@ Next, you’ll create an SMS campaign that will listen for webhooks from Zendesk
 When Zendesk sends the content of a message via API, it comes in the following format:
 
 
-----------------------------------------------\n\n{Replier Name}, {Replier Date}\n\n{Message}
+**----------------------------------------------\n\n{Replier Name}, {Replier Date}\n\n{Message}**
 
 
 Therefore we need to extract the detail we want from this string to display in the message, else a user will see this:
 
 ![An example SMS without formatting.]({% image_buster /assets/img/front/sms_to_braze.png %}){: style="max-width:80%;"}
 
-In the Message textbox, add the following Liquid code, 
+In the Message textbox, add the following Liquid code along with any opt-out language or other static content:
 
 {% raw %}
 ```liquid
@@ -76,7 +74,6 @@ Feel free to respond directly to this number!
 ```
 {% endraw %}
 
-along with any opt-out language or other static content.
 
 ![An example SMS with formatting.]({% image_buster /assets/img/front/sms_to_braze.png %}){: style="max-width:80%;"}
 
@@ -87,9 +84,6 @@ For the delivery type, select **API-Triggered delivery**; then copy the Campaign
 
 ![API Triggered delivery]({% image_buster /assets/img/front/custom_event_trigger.png %})
 
-{% alert note %}
-This custom event is the Data Transformation that writes to the user’s profile. Agent messages will be saved as an event property on this event.
-{% endalert %}
 
 Finally, under **Delivery Controls**, enable re-eligibility.
 
@@ -99,9 +93,9 @@ Finally, under **Delivery Controls**, enable re-eligibility.
 
 Next, navigate to **Objects and rules** > **Business rules** > **Triggers** 
 
-1. Create a new category, for example, Trigger a message 
-2. Create a new trigger, for example, Respond via SMS Braze
-3. Under Conditions, select:
+1. Create a new **category**, for example, **Trigger a message**
+2. Create a new **trigger**, for example, **Respond via SMS Braze**
+3. Under **Conditions**, select:
 - **Ticket>Comment** is **Present and requester can see comment** so that the message is triggered whenever a new public comment is included in a ticket update
 - **Ticket>Update** via is not **Web service (API)** so that when a user sends a message from Braze, it is not forwarded back to their cell phone. Only messages coming from Zendesk will be forwarded.
 
@@ -137,19 +131,19 @@ Under **Actions**, select **Notify by Webhook** and choose the endpoint you crea
 ### Step 4: Create a trigger in Zendesk to update a user when a ticket is closed
 
 
-If you’d like to notify the user that the ticket has been closed, Create a new campaign in Braze with the templated response body 
+If you’d like to notify the user that the ticket has been closed, create a new campaign in Braze with the templated response body 
 
 ![ticket closed.]({% image_buster /assets/img/front/front_custom_channel2.png %}){: style="max-width:65%;"}
 
 Select **API Triggered delivery**, copy campaign ID 
 
 Next, set up a trigger to notify Braze when the ticket is closed:
-- Category: Trigger a message
+- Category: **Trigger a message**
 - Under Conditions, select **Ticket>Ticket Status** is changed to **Solved**
 
 ![Solved ticket.]({% image_buster /assets/img/front/front_custom_channel2.png %}){: style="max-width:65%;"}
 
-Under Actions, select Notify by Webhook and choose the second endpoint you just created. From there, we need to specify the body of the API call:
+Under **Actions**, select **Notify by Webhook** and choose the second endpoint you just created. From there, we need to specify the body of the API call:
 
 ![Solved ticket2.]({% image_buster /assets/img/front/front_custom_channel2.png %}){: style="max-width:65%;"}
 
@@ -184,8 +178,7 @@ Next, you’ll create two new webhook campaigns in Braze so you can forward inbo
 
 |Number|Purpose|
 |---|---|
-|Webhook campaign 1|
-Creates a new ticket in Zendesk.|
+|Webhook campaign 1|Creates a new ticket in Zendesk.|
 |Webhook campaign 2|Forwards all conversational SMS responses sent inbound from the customer to Zendesk.|
 {: .reset-td-br-1 .reset-td-br-2 }
 
@@ -198,7 +191,7 @@ In the Braze dashboard, go to **Audience**, choose your **SMS subscription group
 |Keyword Category|The name of your keyword category, such as `ZendeskSMS1`.|
 |Keywords|Your custom keywords, such as `SUPPORT`.|
 |Reply Message|The message that will be sent when a keyword is detected, such as "A customer service rep will reach out to you shortly."|
-{: .reset-td-br-1 .reset-td-br-2 }
+
 
 ![An example SMS keyword category in Braze.]({% image_buster /assets/img/front/front_keyword.png %}){: style="max-width:65%;"}
 
