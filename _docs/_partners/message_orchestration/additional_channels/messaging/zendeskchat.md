@@ -103,7 +103,7 @@ Next, navigate to **Objects and rules** > **Business rules** > **Triggers**
 
 Under **Actions**, select **Notify by Webhook** and choose the endpoint you created in step 1. Next, specify the body of the API call. Input the campaign_id from step 2 into the request body.
 
-![Actions .]({% image_buster assets/img/zendesk_images/chat7.png %})
+![Respond via SMS Braze JSON Body.]({% image_buster assets/img/zendesk_images/chat7.png %})
 
 {% raw %}
 ```liquid
@@ -133,7 +133,7 @@ Under **Actions**, select **Notify by Webhook** and choose the endpoint you crea
 
 If you’d like to notify the user that the ticket has been closed, create a new campaign in Braze with the templated response body 
 
-![ticket closed.]({% image_buster assets/img/zendesk_images/chat8.png %}){: style="max-width:65%;"}
+![Update a user when ticket is closed.]({% image_buster assets/img/zendesk_images/chat8.png %}){: style="max-width:65%;"}
 
 Select **API Triggered delivery**, copy campaign ID 
 
@@ -141,11 +141,11 @@ Next, set up a trigger to notify Braze when the ticket is closed:
 - Category: **Trigger a message**
 - Under Conditions, select **Ticket>Ticket Status** is changed to **Solved**
 
-![Solved ticket.]({% image_buster assets/img/zendesk_images/chat9.png %}){: style="max-width:65%;"}
+![Solved ticket set up in Zendesk.]({% image_buster assets/img/zendesk_images/chat9.png %}){: style="max-width:65%;"}
 
 Under **Actions**, select **Notify by Webhook** and choose the second endpoint you just created. From there, we need to specify the body of the API call:
 
-![Solved ticket2.]({% image_buster assets/img/zendesk_images/chat10.png %}){: style="max-width:65%;"}
+![Solved ticket JSON Body.]({% image_buster assets/img/zendesk_images/chat10.png %}){: style="max-width:65%;"}
 
 {% raw %}
 ```liquid
@@ -171,6 +171,10 @@ Under **Actions**, select **Notify by Webhook** and choose the second endpoint y
 ```
 {% endraw %}
 
+### Step 5: Add a Custom User Field in Zendesk
+In Admin Center, click **People** in the sidebar, then select **Configuration** > **User fields**. Add custom user field braze_external_id.
+
+
 
 ### Step 6: Set up inbound-SMS forwarding
 
@@ -182,7 +186,7 @@ Next, you’ll create two new webhook campaigns in Braze so you can forward inbo
 |Webhook campaign 2|Forwards all conversational SMS responses sent inbound from the customer to Zendesk.|
 {: .reset-td-br-1 .reset-td-br-2 }
 
-#### Step 5.1: Create an SMS keyword category
+#### Step 6.1: Create an SMS keyword category
 
 In the Braze dashboard, go to **Audience**, choose your **SMS subscription group**, then select **Add Custom Keyword**. To create an exclusive SMS keyword category for Zendesk, fill out the following fields.
 
@@ -283,4 +287,7 @@ Sample Body:
 ```
 {% endraw %}
 
-Set up an action based trigger for users who send an inbound message in category ‘Other’. Set up re-eligibility criteria. Add applicable audiences, in this case zendesk_ticket_open is true, and conversion events and launch.
+#### Step 6.5: Complete second webhook campaign setup
+- Set up an action based trigger for users who send an inbound message in category ‘Other’
+- Set up re-eligibility criteria
+- Add applicable audiences, in this case custom attribute **zendesk_ticket_open** is **true**
