@@ -101,7 +101,7 @@ Next, navigate to **Objects and rules** > **Business rules** > **Triggers**
 
 ![Respond via SMS Braze.]({% image_buster assets/img/zendesk_images/chat6.png %})
 
-Under **Actions**, select **Notify by Webhook** and choose the endpoint you created in step 1. Next, specify the body of the API call. Input the campaign_id from step 2 into the request body.
+Under **Actions**, select **Notify by Webhook** and choose the endpoint you created in step 1. Next, specify the body of the API call. Input the campaign_id from step 2.2 into the request body.
 
 ![Respond via SMS Braze JSON Body.]({% image_buster assets/img/zendesk_images/chat7.png %})
 
@@ -135,7 +135,7 @@ If you’d like to notify the user that the ticket has been closed, create a new
 
 ![Update a user when ticket is closed.]({% image_buster assets/img/zendesk_images/chat8.png %}){: style="max-width:65%;"}
 
-Select **API Triggered delivery**, copy campaign ID 
+Select **API Triggered delivery**, and copy the campaign ID.
 
 Next, set up a trigger to notify Braze when the ticket is closed:
 - Category: **Trigger a message**
@@ -253,7 +253,7 @@ Under **Delivery Controls**, enable re-eligibility.
 
 Set up a webhook campaign to forward remaining SMS messages from the user to Zendesk:
 
-Because Zendesk sends the ticket ID as a string, create a content block to convert the string to an integer in order to leverage it in Zendesk’s webhook
+Because Zendesk sends the ticket ID as a string, create a content block to convert the string to an integer in order to leverage it in Zendesk’s webhook.
 
 {% raw %}
 ```liquid
@@ -288,6 +288,6 @@ Sample Body:
 {% endraw %}
 
 #### Step 6.5: Complete second webhook campaign setup
-- Set up an action based trigger for users who send an inbound message in category ‘Other’
+- Set up an action-based trigger for users who send an inbound message in category ‘Other’
 - Set up re-eligibility criteria
 - Add applicable audiences, in this case custom attribute **zendesk_ticket_open** is **true**
