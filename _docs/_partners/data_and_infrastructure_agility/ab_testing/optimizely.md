@@ -1,5 +1,11 @@
-Sure! Here's your HTML content converted to standard Markdown syntax:
-
+---
+nav_title: Optimizely
+article_title: Optimizely
+description: "Learn how to integrate Optimizely with Braze."
+alias: /partners/optimizely/
+page_type: partner
+search_tag: Partner
+layout: dev_guide
 ---
 
 Optimizely is a leading digital experience platform that offers experimentation and content management tools for digital products and marketing campaigns.
@@ -15,13 +21,13 @@ The Braze and Optimizely integration is a two-way integration that allows you to
 | Requirement                     | Description |
 |----------------------------------|-------------|
 | Optimizely Data Platform Account | An ODP account is required to take advantage of this partnership. |
-| Braze REST API key               | A Front REST API key will be used to make an outbound webhook request from Braze to Front. |
+| Braze REST API key               | A Braze REST API key with the following permissions: `users.track`,`users.export.segments`,`segments.list`,`campaigns.trigger.send`,`canvas.trigger.send` |
 | Currents                         | To export data back into Optimizely, you need to have Braze Currents set up for your account. |
 | Optimizely URL and Token         | This can be obtained by navigating to your Optimizely dashboard and copying the ingestion URL and token. |
 
 # Integration
 
-## Step 1: Configure the integration
+### Step 1: Configure the integration
 
 1. Go to the **App Directory** in ODP.
 2. Select the **Braze** app.
@@ -58,9 +64,47 @@ After you configure the app, you can set up an activation in ODP to sync your OD
 4. Click **Create From Scratch**.
 5. Enter a name for your activation that represents the data you are syncing to Braze (for example, **Braze Data Sync**).
 6. In the **Enrollment** section, you can sync data for customers that match a segment, or you can sync data for customers that trigger an event (like when ODP registers that a customer opens an email).
+   - **Customers that match a segment** – Select your desired segment and click **Next**.
+   - **Customers that trigger an event** – Expand the **Filter** drop-down list and select the ODP event that you want to use as the trigger for this data sync to Braze. Expand **Automation Rules** and adjust as desired.
 
-- **Customers that match a segment** – Select your desired segment and click ...
+7. Expand **Touchpoints**.
+8. Click to edit **Touchpoint 1** and select **Braze**.
+9. Expand the **Targeting** section and select the **Target Identifier**.
+10. Select one of the following options for **Add Users To** in the **Configure** section:
+    - **Campaign** – Add customers to a specific campaign in Braze. After choosing this option, you must select the Braze campaign.
+    - **Canvas** – Add customers to a specific canvas in Braze. After choosing this option, you must select the Braze canvas.
+    - **Profile Update Only** – Update only the Braze customer profile.
 
----
+11. (Optional) Select the **Number of Additional Fields** you want to sync to Braze (up to 20).  
+    A drop-down list and input field display for the number of additional fields you selected. In each **Field #** drop-down list, select the Braze field you want to populate. In each corresponding **Field # Value**, enter the ODP field you want to send to the selected Braze field. For example, if you selected **Company Name** from the **Field #** drop-down list, enter `{{customer.company_name}}` for the corresponding **Field # Value**.
 
-You can copy this directly as markdown into your system clipboard. Let me know if you need any adjustments!
+12. Click **Save** and then click your activation name in the breadcrumb trail.
+13. Click **Select start time and schedule** in the **Touchpoints** section if you selected **Customers that match a segment** for the enrollment.
+14. Complete the following settings, then click **Apply**.
+    - **Recurring or Continuous** – Select **Recurring**.
+    - **Start Date** – Enter the date you want to send the data to Braze.
+    - **End** – Defaults to **Never**. If you want to end the Braze data sync on a specific date, set that here.
+    - **Repeats** – Set to **Daily**.
+    - **Repeat Every** – Set to **1 day**.
+    - **Timing** – Enter the time you want to send the data to Braze.
+    - **Time Zone** – Select the time zone in which you want to send this data.
+
+15. Click **Save** and then click **Go Live**. Your sync starts at your designated start date and time (or when the trigger event occurs).
+
+## Troubleshoot the data sync
+
+To ensure data is syncing as expected from ODP to Braze:
+
+1. Go to **Account Settings > Event Inspector** in ODP.
+2. Click **Start Inspector**.
+3. When data is available in the inspector, a number displays next to **Refresh**. Click to view the data.
+4. The raw data that ODP and Braze sends back and forth displays. Click **View Details** to see the formatted version of that raw data.
+5. Data fields sent from Braze back to ODP start with `_braze`.
+
+Each data sync is also logged in the [ODP activity log](https://www.google.com/url?q=https://support.optimizely.com/hc/en-us/articles/4407268804365-Use-the-Activity-Log&sa=D&source=editors&ust=1733948158385124&usg=AOvVaw2tMOxzcTKfL0-oYLT4IMpP):
+
+1. Go to **Account Settings > Activity Log**.
+2. Filter the categories by **braze**.
+3. Click **View Details** for a formatted view of the log details, including the number of matches.
+
+Let me know if you need further assistance!
