@@ -134,7 +134,7 @@ Jasper Studio is a no-code platform within Jasper that allows marketing teams to
   * **Direct Copy/Paste:** Content can be copied and pasted directly into the Braze platform.
   * **JSON Output:** Generate JSON output. This payload can then be used to directly call Braze’s endpoint via `curl`, middleware, or integrated into your email operations workflow.
 
-![A screenshot of a computer AI-generated content may be incorrect.](images/image1.png)
+![Jasper Braze Custom App.]({% image_buster assets/img/Jasper/jasper_custom_app.png %})
 
 {% tabs %}
 {% tab Example JSON Output (Custom App) %}
