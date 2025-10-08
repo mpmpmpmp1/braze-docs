@@ -16,7 +16,7 @@ layout: dev_guide
 
 ## About the integration
 
-The Swym and Braze integration empowers merchants to deliver highly personalized, event-driven marketing campaigns that convert shopper intent into sales. Merchants can leverage the integration to make it easy for shoppers to pick up where they left off, to collaborate with others throughout their shopping journey and to deploy high performance retargeting campaigns.
+The Swym and Braze integration empowers merchants to deliver highly personalized, event-driven marketing campaigns that convert shopper intent into sales. Merchants can leverage the integration to make it easy for shoppers to pick up where they left off, to collaborate with others throughout their shopping journey, and to deploy high performance retargeting campaigns.
 
 ## Prerequisites
 
@@ -55,7 +55,7 @@ Please share credentials securely using [OneTimeSecret](https://onetimesecret.co
 
 - In the Braze dashboard, navigate to *Data Settings > Custom Events* to view the list of Swym events that are registered.
 
-- To view the properties of each Swym event, select Manage Properties for the corresponding custom event.
+- To view the properties of each Swym event, select *Manage Properties* for the corresponding custom event.
 
 - These properties contain the event values that can be used to personalize your messages.
 
@@ -94,7 +94,7 @@ From your Wishlist Plus app, go to the Marketing tab and find the Automations se
 
 ### Step 3: Create a Braze Campaign or Canvas
 
-You will have to build a separate Campaigan or Cavnas for each of the events you subscribed to in order to automate sending out personalised messages to your shoppers. For step-by-step guidance, you can refer to [Braze's documentation](https://www.braze.com/docs/user_guide/getting_started/campaigns_canvases/#campaigns)).
+To automate the delivery of personalized messages for your shoppers, you must create a separate Campaign or Canvas in Braze for each event you have subscribed to. Each Campaign or Canvas should be configured to trigger based on the specific event and use the corresponding event properties to populate dynamic content in your messages. For step-by-step guidance, you can refer to [Braze's documentation](https://www.braze.com/docs/user_guide/getting_started/campaigns_canvases/#campaigns)).
    
 ![An image of action based event]({% image_buster /assets/img/swym/braze-canvas-setup.png %})
 
