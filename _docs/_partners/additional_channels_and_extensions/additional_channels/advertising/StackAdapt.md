@@ -114,21 +114,21 @@ Follow these steps to import your Braze customer profiles:
      * **Braze REST Endpoint URL:** Enter the base URL for your Braze instance (for example, `https://rest.iad-01.braze.com`).
    * Click **Connect** to verify the credentials.
 
-   ![Braze Connection Screenshot](images/image1.png)
+   ![Braze Connection Screenshot in the StackAdapt UI.]({% image_buster /assets/img/stackadapt/StackAdapt_Braze_Connection_Settings.png %})
 
-4. **Choose your connection and select your StackAdapt advertiser**
+5. **Choose your connection and select your StackAdapt advertiser**
 
-5. **Configure your Property Mappings**
+6. **Configure your Property Mappings**
 
    * Once connected, a mapping interface will be displayed.
    * StackAdapt will suggest default mappings and pre-select some of the properties. Review and confirm these.
    * If you want to import additional properties, make sure to select them by checking the checkbox on the left and specify if it contains PII and the data type.
 
-   ![Property Mapping Screenshot](images/image2.png)
+  ![Braze Connection Screenshot in the StackAdapt UI.]({% image_buster /assets/img/stackadapt/StackAdapt_mappings.png %})
 
-6. **Add your profiles to a List** or create a new one so it’s easy to group and segment your profiles.
+7. **Add your profiles to a List** or create a new one so it’s easy to group and segment your profiles.
 
-7. Click **Activate Integration** to start the initial data sync.
+8. Click **Activate Integration** to start the initial data sync.
 
 ## Important Considerations
 
