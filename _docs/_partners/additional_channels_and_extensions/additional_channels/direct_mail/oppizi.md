@@ -60,7 +60,7 @@ Oppizi requires an HTTP method along with the following HTTP headers to be inclu
   * **Content-Type**: application/json
 
 
-![A message error log showing the time, app name, channel, and error message. The error message includes the message alert and the status code.]({% image_buster /assets/img_archive/error_log.png %})
+![An example of the Oppizi webhook header in Braze.]({% image_buster /assets/oppizi/Oppizi_Braze_webhook_headers.png %})
 
 **Request Body:**
 
@@ -68,7 +68,7 @@ The request body must include the field **oppiziWorkflowID**. This ID is generat
 
 Additionally, make sure all required custom attributes are set up in your Braze account for your recipients’ postal addresses, as these are necessary for sending direct mail.
 
-![A message error log showing the time, app name, channel, and error message. The error message includes the message alert and the status code.]({% image_buster /assets/img_archive/error_log.png %})
+![An example of a Oppizi webhook template in Braze]({% image_buster /assets/img/oppizi/Oppizi_Braze_webhook_example.png %})
 
 {% raw %}
 ```json
