@@ -1,8 +1,18 @@
+---
+nav_title: StackAdapt
+article_title: StackAdapt
+description: "This reference article outlines the partnership between Braze and StackAdapt."
+page_type: partner
+search_tag: Partner
+
+---
+
+
 # StackAdapt
 
-StackAdapt is the leading AI-powered marketing platform used by the most exceptional digital marketers to deliver targeted, performance-driven advertising.
+> [StackAdapt](https://www.stackadapt.com/) is the leading AI-powered marketing platform used by the most exceptional digital marketers to deliver targeted, performance-driven advertising.
 
-**This integration is maintained by StackAdapt.**
+_This integration is maintained by StackAdapt._
 
 ## About the Integration
 
@@ -20,7 +30,7 @@ The Braze and StackAdapt integration allows you to sync customer profile data fr
 | Requirement             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **StackAdapt Account**  | You need an active StackAdapt account with permissions to manage Data Hub integrations.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| **Braze REST API key**  | A Braze REST API key with the following permissions:<br>- users.export.ids<br>- users.export.segment<br>- email.unsubscribe<br>- email.hard_bounces<br>- messages.schedule_broadcasts<br>- campaigns.list<br>- campaigns.details<br>- canvas.list<br>- canvas.details<br>- segments.list<br>- segments.details<br>- purchases.product_list<br>- events.list<br>- feed.list<br>- feed.details<br>- templates.email.info<br>- templates.email.list<br>- subscription.status.get<br>- Subscription.groups.get<br>This can be created in the Braze dashboard from **Settings > API Keys.** |
+| **Braze REST API key**  | A Braze REST API key with the following permissions:<br><br>- `users.export.ids`<br>- `users.export.segment`<br>- `email.unsubscribe`<br>- `email.hard_bounces`<br>- `messages.schedule_broadcasts`<br>- `campaigns.list`<br>- `campaigns.details`<br>- `canvas.list`<br>- `canvas.details`<br>- `segments.list`<br>- `segments.details`<br>- `purchases.product_list`<br>- `events.list`<br>- `feed.list`<br>- `feed.details`<br>- `templates.email.info`<br>- `templates.email.list`<br>- `subscription.status.get`<br>- `Subscription.groups.get`<br><br>This can be created in the Braze dashboard from **Settings > API Keys.** |
 | **Braze REST endpoint** | [Your REST endpoint URL](https://www.braze.com/docs/api/basics/#endpoints). Your endpoint depends on the Braze URL for your instance.                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 ## How it Works
@@ -38,7 +48,10 @@ The StackAdapt Data Hub connects directly to your Braze account to pull customer
 
 StackAdapt can sync a variety of Braze profile fields, including, but not limited to:
 
-* **Pre-selected attributes:**
+{% tabs local %}
+{% tab Pre-selected attributes %}
+
+**Pre-selected Attributes:**
 
   * Email
   * Date of Birth
@@ -50,28 +63,48 @@ StackAdapt can sync a variety of Braze profile fields, including, but not limite
   * Gender
   * Time Zone
   * Email Subscribe
+ 
+{% endtab %}
+{% tab User Attributes %}
 
-* **User attributes**
+**User Attributes**
 
-  * Attributed Ad, Attributed Adgroup, Attributed Campaign, Attributed Source, Created At, Email Subscribe, External Id, Gender, Id, Language, Push Subscribe, Total Revenue
+  * Attributed Ad
+  * Attributed Adgroup
+  * Attributed Campaign
+  * Attributed Source
+  * Created At
+  * Email Subscribe
+  * External Id
+  * Gender
+  * Id
+  * Language
+  * Push Subscribe
+  * Total Revenue
 
-* **Subscription/Consent Status:** It is crucial to accurately map fields in Braze that reflect user consent for marketing communications (for example, email subscription status). This ensures that your advertising efforts remain compliant with user preferences and privacy regulations.
+ {% endtab %}
+ {% tab Subscription and Consent Status %}
+
+**Subscription/Consent Status:** It is crucial to accurately map fields in Braze that reflect user consent for marketing communications (for example, email subscription status). This ensures that your advertising efforts remain compliant with user preferences and privacy regulations.
+
+{% endtab %}
+{% endtabs %}
 
 ## Setting Up the Integration
 
 Follow these steps to import your Braze customer profiles:
 
-1. **Navigate to Data Hub Integrations:**
+1. **Navigate to Data Hub Integrations**
 
    * Log in to your StackAdapt account.
    * From the left-hand navigation menu, select **Data Hub**.
 
-2. **Import from Integration:**
+2. **Import from Integration**
 
    * Click on the **Import Profiles** button.
    * Select **Braze** from the list of available integrations.
 
-3. **Authenticate Your Braze Account:**
+3. **Authenticate Your Braze Account**
 
    * You will be prompted to enter your Braze API credentials:
 
@@ -83,9 +116,9 @@ Follow these steps to import your Braze customer profiles:
 
    ![Braze Connection Screenshot](images/image1.png)
 
-4. **Choose your connection and select your StackAdapt advertiser.**
+4. **Choose your connection and select your StackAdapt advertiser**
 
-5. **Configure your Property Mappings:**
+5. **Configure your Property Mappings**
 
    * Once connected, a mapping interface will be displayed.
    * StackAdapt will suggest default mappings and pre-select some of the properties. Review and confirm these.
