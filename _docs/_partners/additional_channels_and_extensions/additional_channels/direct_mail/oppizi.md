@@ -59,14 +59,16 @@ Oppizi requires an HTTP method along with the following HTTP headers to be inclu
   * **Authorization**: Bearer <oppiziAPIKey>
   * **Content-Type**: application/json
 
-image 
+
+![A message error log showing the time, app name, channel, and error message. The error message includes the message alert and the status code.]({% image_buster /assets/img_archive/error_log.png %})
 
 **Request Body:**
 
 The request body must include the field **oppiziWorkflowID**. This ID is generated when a workflow is created in Oppizi, and it is required to specify which direct mail workflow your recipients should be added to. Each direct mail workflow in Oppizi has a unique ID, so if you create an Oppizi webhook template in Braze, make sure to always update the workflow ID to the correct one.
 
 Additionally, make sure all required custom attributes are set up in your Braze account for your recipients’ postal addresses, as these are necessary for sending direct mail.
-*(Refer to image: images/image1.png)*
+
+![A message error log showing the time, app name, channel, and error message. The error message includes the message alert and the status code.]({% image_buster /assets/img_archive/error_log.png %})
 
 {% raw %}
 ```json
