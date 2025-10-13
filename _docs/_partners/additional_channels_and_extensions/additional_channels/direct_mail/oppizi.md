@@ -11,7 +11,7 @@ search_tag: Partner
 
 > [Oppizi](https://www.oppizi.com/) is the global leader in offline marketing, providing a one-stop solution for businesses to run measurable, targeted direct mail and flyering campaigns.
 
-_This integration is maintained by Lob._
+_This integration is maintained by Oppizi._
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ With the Oppizi integration, you can:
 
 You need to generate your Oppizi API Key in order to use it in your webhook template in Braze.
 
-1. Log in to Oppizi.
+1. Log into Oppizi.
 2. Go to **Integrations > Braze**.
 3. Generate your API Key.
 4. Manage your keys from the same page (revoke or create new ones as needed).
@@ -58,7 +58,6 @@ Oppizi requires an HTTP method along with the following HTTP headers to be inclu
 * **Request Headers**:
   * **Authorization**: Bearer <oppiziAPIKey>
   * **Content-Type**: application/json
-
 
 ![An example of the Oppizi webhook header in Braze.]({% image_buster /assets/oppizi/Oppizi_Braze_webhook_headers.png %})
 
