@@ -1,8 +1,17 @@
-# Oppizi <> Braze integration - Customer-facing documentation
+---
+nav_title: Oppizi
+article_title: Oppizi 
+alias: /partners/oppizi/
+description: "This reference article outlines the partnership between Braze and Oppizi."
+page_type: partner
+search_tag: Partner
+---
 
-## Summary
+# Oppizi
 
-Oppizi is the global leader in offline marketing, providing a one-stop solution for businesses to run measurable, targeted direct mail and flyering campaigns.
+> [Oppizi](https://www.oppizi.com/) is the global leader in offline marketing, providing a one-stop solution for businesses to run measurable, targeted direct mail and flyering campaigns.
+
+_This integration is maintained by Lob._
 
 ## Prerequisites
 
@@ -14,7 +23,7 @@ Oppizi is the global leader in offline marketing, providing a one-stop solution 
 
 ## Use Cases
 
-**With the Oppizi integration, you can:**
+With the Oppizi integration, you can:
 
 * **Send automated direct mail postcards** using Braze triggers connected to Oppizi's webhook and direct mail workflows.
 * **Configure thresholds, waves, and limits** in Oppizi direct mail workflows to control the sending of your campaigns.
@@ -23,42 +32,44 @@ Oppizi is the global leader in offline marketing, providing a one-stop solution 
 
 ## Integration
 
-### Sending mail using Braze webhooks
-
-**Step 1: Generate your Oppizi API Key**
+### Step 1: Generate your Oppizi API Key 
 
 You need to generate your Oppizi API Key in order to use it in your webhook template in Braze.
 
-1. Log in to Oppizi
-2. Go to **Integrations -> Braze**
-3. Generate your API Key
+1. Log in to Oppizi.
+2. Go to **Integrations > Braze**.
+3. Generate your API Key.
 4. Manage your keys from the same page (revoke or create new ones as needed).
 
-**Step 2: Create a Braze webhook template**
+### Step 2: Create a Braze webhook template
 
 Create an Oppizi webhook template to use in future campaigns or Canvases by navigating to **Templates > Webhook Templates** in the Braze platform.
 
-**Webhook settings:**
+**Webhook Settings:**
 
-* Webhook URL: [https://webhook.oppizi.com/events](https://webhook.oppizi.com/events)
-* Request Body: Raw text - format detailed in the next section
+* **Webhook URL**: [https://webhook.oppizi.com/events](https://webhook.oppizi.com/events)
+* **Request Body**: Raw text - format detailed in the section below.
 
-**Request method and headers**
+**Request Method and Headers:**
 
 Oppizi requires an HTTP method along with the following HTTP headers to be included in the template.
 
-HTTP Method: **POST**
-Request Headers:
-*(Refer to image: images/image2.png)*
+* **HTTP Method**: POST
+* **Request Headers**:
+  * **Authorization**: Bearer <oppiziAPIKey>
+  * **Content-Type**: application/json
 
-**Request body**
+image 
+
+**Request Body:**
 
 The request body must include the field **oppiziWorkflowID**. This ID is generated when a workflow is created in Oppizi, and it is required to specify which direct mail workflow your recipients should be added to. Each direct mail workflow in Oppizi has a unique ID, so if you create an Oppizi webhook template in Braze, make sure to always update the workflow ID to the correct one.
 
 Additionally, make sure all required custom attributes are set up in your Braze account for your recipients’ postal addresses, as these are necessary for sending direct mail.
 *(Refer to image: images/image1.png)*
 
-```
+{% raw %}
+```json
 {
 "event" : "workflow.addRecipient",
 "oppiziWorkflowID" : "<oppiziWorkflowID>",
@@ -73,16 +84,15 @@ Additionally, make sure all required custom attributes are set up in your Braze 
 "zipCode" : "{{custom_attribute.${zipCode}}}",
 "state" : "{{custom_attribute.${state}}}"
 }
-}
 ```
+{% endraw %}
 
-**Step 3. Create a Direct Mail Workflow in Oppizi**
+### Step 3. Create a Direct Mail Workflow in Oppizi
 
-1. In Oppizi, go to **Direct Mail Workflow -> Create workflow**
+1. In Oppizi, go to **Direct Mail Workflow > Create workflow**
 2. Configure workflow details, including thresholds, waves, postcard format, and artwork.
 3. In the webhook details section, you’ll find a ready-to-use request body, including your workflow ID, that you can paste directly into Braze.
 
-**Step 4. Preview and test your request in Braze**
+### Step 4. Preview and test your request in Braze
 
-After adding your request body containing Oppizi’s workflow ID, preview the request and run a test to confirm successful setup.
-Once validated, you'll be ready to go with your automated direct mail campaigns.
+After adding your request body containing Oppizi’s workflow ID, preview the request and run a test to confirm successful setup. Once validated, you'll be ready to go with your automated direct mail campaigns.
