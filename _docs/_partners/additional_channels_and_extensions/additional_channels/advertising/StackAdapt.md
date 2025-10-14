@@ -49,10 +49,9 @@ The StackAdapt Data Hub connects directly to your Braze account to pull customer
 StackAdapt can sync a variety of Braze profile fields, including, but not limited to:
 
 {% tabs local %}
-{% tab Pre-selected attributes %}
+{% tab Standard attributes %}
 
-**Pre-selected Attributes:**
-
+**Standard Attributes:**
   * Email
   * Date of Birth
   * First Name
@@ -62,30 +61,37 @@ StackAdapt can sync a variety of Braze profile fields, including, but not limite
   * Country
   * Gender
   * Time Zone
-  * Email Subscribe
+  * Created At
+  * External ID
+  * Language 
+
  
 {% endtab %}
-{% tab User Attributes %}
 
-**User Attributes**
+{% tab Custom Attributes %}
+
+**Custom Attributes:**
+Attributes that are specific to your app or business, defined based on your specific business needs.
+{% endtab %}
+
+{% tab Attribution Data %}
+
+**Attribution Data**
 
   * Attributed Ad
   * Attributed Adgroup
   * Attributed Campaign
   * Attributed Source
-  * Created At
-  * Email Subscribe
-  * External Id
-  * Gender
-  * Id
-  * Language
-  * Push Subscribe
-  * Total Revenue
 
  {% endtab %}
- {% tab Subscription and Consent Status %}
+ {% tab Subscription Status %}
 
-**Subscription/Consent Status:** It is crucial to accurately map fields in Braze that reflect user consent for marketing communications (for example, email subscription status). This ensures that your advertising efforts remain compliant with user preferences and privacy regulations.
+**Subscription Status:**
+  
+  * Email Subscription Status
+  * Push Subscription Status 
+
+It is crucial to accurately map fields in Braze that reflect user consent for marketing communications (for example, email subscription status). This ensures that your advertising efforts remain compliant with user preferences and privacy regulations.
 
 {% endtab %}
 {% endtabs %}
