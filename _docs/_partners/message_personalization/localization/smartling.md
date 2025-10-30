@@ -46,10 +46,14 @@ Refer to Smartling [documentation](https://help.smartling.com/hc/en-us/articles/
 #### Connecting Braze to Smartling
 
 1. In [Smartling](https://dashboard.smartling.com/), create a [Braze Connector](https://help.smartling.com/hc/en-us/articles/115003074093) project type in your Smartling account.
+![Braze connection in Smartling.]({% image_buster /assets/img/smartling/image1_Connecting .png_Braze_to_Smartling.png %})
 2. In this project, select **Settings** > **Braze Settings** > **Connect to Braze**.
    * Enter the required fields like API URL and API Key. If the Test Connection is successful, save Connection. If the test is not successful, double check you’ve inputted the correct API URL and API Key.
+![Braze connection in Smartling API settings.]({% image_buster /assets/img/smartling/image2_API.png %})
 3. Add additional project languages
+ ![Braze connection in Smartling Project Languages.]({% image_buster /assets/img/smartling/image3_project_languages.png %}) assets/img/smartling/image3_project_languages.png
 4. In Braze Settings, verify that the values in the Target Language (Braze) column match the locales configured in Braze multi-language settings. The locale naming convention must match exactly.
+![Braze connection in Smartling Language Confirmation.]({% image_buster /assets/img/smartling/image4_language_confirmation.png %})
 
 ### Step 3: Add Translation Tags to your Braze message
 
@@ -60,6 +64,8 @@ Refer to the [instructions](https://www.braze.com/docs/user_guide/message_buildi
 * [In App Messages](https://www.braze.com/docs/user_guide/message_building_by_channel/in-app_messages/using_locales)
 
 Here is an example of a HTML Email campaign with translation tags.
+
+![Braze email with translation tags.]({% image_buster /assets/img/smartling/image5_translation_tags.png %})
 
 You must save the message as a draft before you can select locales.
 
@@ -74,14 +80,21 @@ Smartling provides advanced features to search and select content by:
 * Braze tagging
 
 1. In the example below, you can see the New Year promotion email campaign that was created in Step 3.
+![Braze email with translation tags.]({% image_buster /assets/img/smartling/image6_ny_promotion.png %})
 2. Once you’ve located the campaign you want to translate, select the folder, choose the variants, and click Request Translation.
+![Request Translations.]({% image_buster /assets/img/smartling/image7_request_translation.png %})
 3. Create a new job for the translation.
+![Create a new job for the translation.]({% image_buster /assets/img/smartling/image8_request_translation.png %})
 4. Once the job has been authorized, you can edit each translation in the CAT tool.
+![Translation CAT Tool.]({% image_buster /assets/img/smartling/image9_translation_job.png %})
 5. After the translations are complete, save and submit your translation to Braze.
+![Submit translation to Braze.]({% image_buster /assets/img/smartling/image10_translations.png %})
 
 ### Step 5: Preview the Message as a Multi-Language User in Braze
 
 In Braze, preview your campaign as a multi-language user to confirm that the translations were applied correctly.
+
+![Multi language user preview.]({% image_buster /assets/img/smartling/image11_preview.png %})
 
 ## Managing translations for Content Blocks and Email Templates
 
