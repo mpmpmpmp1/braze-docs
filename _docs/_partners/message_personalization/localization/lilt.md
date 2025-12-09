@@ -48,17 +48,17 @@ Before you start, you need the following:
 
 1. Log into LILT and click into Connect. Click “New Connector” and select Braze.
 	
-![Braze connector in LILT.]({% image_buster /assets/img/smartling/image1_Connecting_Braze_to_Smartling.png %})
+![Braze connector in LILT.]({% image_buster /assets/img/lilt/image 1 select connector.png %})
 
 2. Select the desired localization workflow for your Braze content.
 
-	
+![Braze workflow in LILT.]({% image_buster /assets/img/lilt/image 2 select workflow.png %})	
 
 3. Enter and verify the necessary configuration details:
 - Your Braze API Key
 - Braze REST endpoint
 
-	
+![Complete API Credentials.]({% image_buster /assets/img/lilt/image 3 api creds.png %})	
 
 4. Click **Verify** to test the setup. Once the connection is confirmed, save the configuration.
 
@@ -66,7 +66,7 @@ Before you start, you need the following:
 
 1. Activate the multi-language capabilities within your Braze workspace settings.
 
-	
+![Set up locales in Braze.]({% image_buster /assets/img/lilt/image 4 lilt locales.png %})	
 
 2. Create the following tags in Braze for your LILT workflow: 
 - `LILT: Ready`
@@ -76,7 +76,7 @@ Before you start, you need the following:
 - `LILT: Needs Attention`
 - `LILT: Instant`
 
-
+![Set up LILT tags in Braze.]({% image_buster /assets/img/lilt/image 5 lilt tags.png %})	
 
 ### Step 3: Send content to LILT for translation 
 
@@ -86,6 +86,5 @@ Before you start, you need the following:
 - Choose `LILT: Ready` for Verified Translation
 - Choose `LILT: Instant` for brand-aligned Instant Translation
 3. The LILT <> Braze Connector runs at your preset timing to pull the tagged content into LILT. Track translation progress, as content tags automatically update in Braze to reflect the stage of your project. 
-    
 	
-
+![Braze email template with translation tags.]({% image_buster /assets/img/lilt/image 6 braze templates.png %})	
