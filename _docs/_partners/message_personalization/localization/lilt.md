@@ -48,7 +48,7 @@ Before you start, you need the following:
 
 1. Log into LILT and click into Connect. Click “New Connector” and select Braze.
 	
-
+![Braze connector in LILT.]({% image_buster /assets/img/smartling/image1_Connecting_Braze_to_Smartling.png %})
 
 2. Select the desired localization workflow for your Braze content.
 
