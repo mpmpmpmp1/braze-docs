@@ -266,6 +266,6 @@ For the update and remove operations, `identifier` is a required key. If add, up
 [android]: https://github.com/rudderlabs/rudder-integration-braze-android
 [ios]: https://github.com/rudderlabs/rudder-integration-braze-ios/tree/master
 [swift]: https://github.com/rudderlabs/rudder-integration-braze-swift
-[web]: https://github.com/rudderlabs/rudder-sdk-js/tree/production/src/integrations/Braze
+[web]: https://github.com/rudderlabs/rudder-sdk-js/tree/develop/packages/analytics-js-integrations/src/integrations/Braze
 [react]: https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/rudder-integration-braze-react-native
 [flutter]: https://github.com/rudderlabs/rudder-sdk-flutter/tree/develop/packages/integrations/rudder_integration_braze_flutter
