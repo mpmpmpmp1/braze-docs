@@ -55,23 +55,23 @@ Custom events and custom attributes can be used to power a variety of personaliz
 
 For example, target any customer who rated their pickup experience less than 5 stars.
 
-<img width="881" height="235" alt="Screenshot 2026-02-02 at 11 42 33 AM" src="https://github.com/user-attachments/assets/434ec14c-1e01-4875-aa92-03c8d61386e0" />
+![Segment for bad pickup experience]({% image_buster /assets/img/flybuy/flybuy1.png %})
 
 ### Trigger an alert when a customer enters a virtual pickup area
 
 Send a personalized SMS targeting customers without a loyalty account to download the app and create a loyalty account. 
 
-<img width="765" height="629" alt="Screenshot 2026-02-02 at 12 21 10 PM" src="https://github.com/user-attachments/assets/9007e59f-f14e-40d2-a5c1-c77b0246b0d9" />
+![Trigger an alert when a customer enters a virtual pickup area]({% image_buster /assets/img/flybuy/flybuy2.png %})
 
-<img width="768" height="533" alt="Screenshot 2026-02-02 at 12 21 46 PM" src="https://github.com/user-attachments/assets/775f24e9-eb3b-40a3-95cd-24277581cc90" />
+![Trigger an alert when a customer enters a virtual pickup area message]({% image_buster /assets/img/flybuy/flybuy2a.png %})
 
 ### Build an audience segment of customers who had a long wait time
 
 For example, target any customer who had a wait time of over 2 minutes upon exiting a virtual store premise
 
-<img width="840" height="233" alt="Screenshot 2026-02-02 at 12 57 13 PM" src="https://github.com/user-attachments/assets/0fd18302-8cef-4418-bdab-c75734654d70" />
+![Build an audience segment of customers who had a long wait time]({% image_buster /assets/img/flybuy/flybuy3.png %})
 
-<img width="764" height="713" alt="Screenshot 2026-02-02 at 12 54 44 PM" src="https://github.com/user-attachments/assets/d4307c95-25bd-456e-8041-9014f73c3d90" />
+![Build an audience segment of customers who had a long wait time message]({% image_buster /assets/img/flybuy/flybuy3a.png %})
 
 
 ### Trigger a course correction alert when a customer is headed to the wrong location
