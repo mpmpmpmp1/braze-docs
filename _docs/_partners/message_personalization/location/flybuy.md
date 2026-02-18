@@ -1,0 +1,106 @@
+---
+nav_title: Flybuy 
+article_title: Flybuy
+alias: /partners/flybuy/
+description: "This reference article outlines the partnership between Braze and Flybuy, a location services platform, to add location intelligence to your operations and marketing capabilities."
+page_type: partner
+search_tag: Partner
+
+---
+
+# Flybuy
+
+Flybuy by Radius Networks is the leading
+omnichannel location platform leveraging
+AI-powered technology to optimize speed of
+service across pickup, delivery, drive-thru,
+and dine-in. Through its integrated
+Marketing Suite, Flybuy also enables brands
+to deliver hyper-targeted, moment-based
+messages, helping to drive engagement,
+increase check size, and support broader
+loyalty initiatives.
+
+_This integration is maintained by Flybuy._
+
+## About the integration
+
+Flybuy delivers rich user-intelligence events into Braze, empowering brands to send hyper-relevant, location-aware messages with the highest level of personalization. 
+When a user generates an event in Flybuy, custom events with rich user attributes are delivered to Braze. These events and attributes can be used to power omnichannel operations 
+and trigger proximity-based messages. 
+
+## Prerequisites
+
+| Requirement | Description |
+|---|---|
+| Flybuy account | A Flybuy account with at least one project |
+| Braze Dashboard Endpoint | Braze endpoint which can be found in the Braze portal |
+| Braze REST API key | A Braze REST API key with `users.track` permissions. |
+
+
+## Integration
+
+To enable the integration:
+
+1. In the Flybuy Merchant portal, navigate to the "Project Info" and click on "Events Engine"
+2. Press "Add a Destination" and then select "Braze"
+3. Add your Braze API Key and Endpoint, and select the events you want enabled. 
+4. Press "Finish Setup" 
+
+{% alert note %}
+Flybuy maps `loyalty_id` to the Braze `external_id` for logged-in users. 
+
+## Use Cases
+
+Solutions
+---------
+
+- [Pickup](https://www.flybuy.com/flybuypickup), [Delivery](https://www.flybuy.com/flybuydelivery), [Drive-Thru](https://www.flybuy.com/flybuydrivethru)
+- [Table Service](https://www.flybuy.com/flybuytableservice)
+- [Hotel Mobile Check-In & Ordering](https://www.flybuy.com/industries/hospitality)
+- [Marketing Suite](https://www.flybuy.com/flybuy-marketing-suite)
+
+
+Event and Attribute-Based Trigger Examples
+---------------------------------
+Custom events and user attributes can be used to power a variety of personalized experiences
+
+### Build an audience segment of customers who had a bad pickup experience
+
+For example, target any customer who rated their pickup experience less than 5 stars.
+
+<img width="881" height="235" alt="Screenshot 2026-02-02 at 11 42 33 AM" src="https://github.com/user-attachments/assets/434ec14c-1e01-4875-aa92-03c8d61386e0" />
+
+### Trigger an alert when a customer enters a virtual pickup area
+
+Send a personalized SMS targeting customers without a loyalty account to download the app and create a loyalty account. 
+
+<img width="765" height="629" alt="Screenshot 2026-02-02 at 12 21 10 PM" src="https://github.com/user-attachments/assets/9007e59f-f14e-40d2-a5c1-c77b0246b0d9" />
+
+<img width="768" height="533" alt="Screenshot 2026-02-02 at 12 21 46 PM" src="https://github.com/user-attachments/assets/775f24e9-eb3b-40a3-95cd-24277581cc90" />
+
+### Build an audience segment of customers who had a long wait time
+
+For example, target any customer who had a wait time of over 2 minutes upon exiting a virtual store premise
+
+<img width="840" height="233" alt="Screenshot 2026-02-02 at 12 57 13 PM" src="https://github.com/user-attachments/assets/0fd18302-8cef-4418-bdab-c75734654d70" />
+
+<img width="764" height="713" alt="Screenshot 2026-02-02 at 12 54 44 PM" src="https://github.com/user-attachments/assets/d4307c95-25bd-456e-8041-9014f73c3d90" />
+
+
+### Trigger a course correction alert when a customer is headed to the wrong location
+
+Send a push notification to customers when they are headed or have arrived at a location different from where they placed their order. 
+
+### Deliver special offers based on trip milestones
+
+For example, send a special offer when a VIP customer arrives at their favorite locations/. 
+
+
+### Build an audience segment of customers who were missing items in their order
+
+For example, target any customer who commented that items were missing in their digital order.
+
+Visit [Flybuy Developer Documentation](https://www.radiusnetworks.com/developers/flybuy/#/) for more information about our robust suite of APIs and SDKs. 
+{% endalert %}
+
