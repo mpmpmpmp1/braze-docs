@@ -10,31 +10,19 @@ search_tag: Partner
 
 # Flybuy
 
-Flybuy by Radius Networks is the leading
-omnichannel location platform leveraging
-AI-powered technology to optimize speed of
-service across pickup, delivery, drive-thru,
-and dine-in. Through its integrated
-Marketing Suite, Flybuy also enables brands
-to deliver hyper-targeted, moment-based
-messages, helping to drive engagement,
-increase check size, and support broader
-loyalty initiatives.
+> [Flybuy](https://www.flybuy.com/) by Radius Networks is the leading omnichannel location platform leveraging AI-powered technology to optimize speed of service across pickup, delivery, drive-thru, and dine-in. Through its integrated Marketing Suite, Flybuy also enables brands to deliver hyper-targeted, moment-based messages, helping to drive engagement, increase check size, and support broader loyalty initiatives.
 
 _This integration is maintained by Flybuy._
 
 ## About the integration
 
-Flybuy delivers rich user-intelligence events into Braze, empowering brands to send hyper-relevant, location-aware messages with the highest level of personalization. 
-When a user generates an event in Flybuy, custom events with rich user attributes are delivered to Braze. These events and attributes can be used to power omnichannel operations 
-and trigger proximity-based messages. 
+Flybuy delivers rich user-intelligence events into Braze, empowering brands to send hyper-relevant, location-aware messages with the highest level of personalization. When a user generates an event in Flybuy, custom events with rich user attributes are delivered to Braze. These events and attributes can be used to power omnichannel operations and trigger proximity-based messages. 
 
 ## Prerequisites
 
 | Requirement | Description |
 |---|---|
-| Flybuy account | A Flybuy account with at least one project |
-| Braze Dashboard Endpoint | Braze endpoint which can be found in the Braze portal |
+| Flybuy account | A Flybuy account with at least one project. |
 | Braze REST API key | A Braze REST API key with `users.track` permissions. |
 
 
@@ -42,18 +30,16 @@ and trigger proximity-based messages.
 
 To enable the integration:
 
-1. In the Flybuy Merchant portal, navigate to the "Project Info" and click on "Events Engine"
-2. Press "Add a Destination" and then select "Braze"
+1. In the Flybuy Merchant portal, navigate to the **Project Info** and click on **Events Engine**.
+2. Press **Add a Destination** and then select **Braze**.
 3. Add your Braze API Key and Endpoint, and select the events you want enabled. 
-4. Press "Finish Setup" 
+4. Press **Finish Setup**. 
 
-{% alert note %}
+{% alert important %}
 Flybuy maps `loyalty_id` to the Braze `external_id` for logged-in users. 
+{% endalert %}
 
 ## Use Cases
-
-Solutions
----------
 
 - [Pickup](https://www.flybuy.com/flybuypickup), [Delivery](https://www.flybuy.com/flybuydelivery), [Drive-Thru](https://www.flybuy.com/flybuydrivethru)
 - [Table Service](https://www.flybuy.com/flybuytableservice)
@@ -61,9 +47,9 @@ Solutions
 - [Marketing Suite](https://www.flybuy.com/flybuy-marketing-suite)
 
 
-Event and Attribute-Based Trigger Examples
----------------------------------
-Custom events and user attributes can be used to power a variety of personalized experiences
+## Event and Attribute-Based Trigger Examples
+
+Custom events and custom attributes can be used to power a variety of personalized experiences.
 
 ### Build an audience segment of customers who had a bad pickup experience
 
@@ -94,7 +80,7 @@ Send a push notification to customers when they are headed or have arrived at a 
 
 ### Deliver special offers based on trip milestones
 
-For example, send a special offer when a VIP customer arrives at their favorite locations/. 
+For example, send a special offer when a VIP customer arrives at their favorite locations. 
 
 
 ### Build an audience segment of customers who were missing items in their order
@@ -102,5 +88,5 @@ For example, send a special offer when a VIP customer arrives at their favorite 
 For example, target any customer who commented that items were missing in their digital order.
 
 Visit [Flybuy Developer Documentation](https://www.radiusnetworks.com/developers/flybuy/#/) for more information about our robust suite of APIs and SDKs. 
-{% endalert %}
+
 
